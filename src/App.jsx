@@ -1,12 +1,27 @@
 import React from 'react'
+import Layout from './components/Layout'
+import {
+  RouterProvider,
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from "react-router-dom"
+import Dashboard from './components/Dashboard';
+import Wallet from './components/Wallet';
+import Profile from './components/Profile';
 
-function App() {
+export default function App() {
+  let router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<Layout />}>
+        <Route index element={< Dashboard />} />
+        <Route path="wallet" element={<Wallet />} />
+        <Route path="profile" element={<Profile />} />
+      </Route>
+    )
+  );  
 
   return (
-    <>
-      <h1>Fintreck</h1>
-    </>
+    <RouterProvider router={router} />
   )
 }
-
-export default App
