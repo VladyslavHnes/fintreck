@@ -23,16 +23,18 @@ html, body {
     flex-direction: column;
 }
 
-.dashboard {
+.main {
     height: 100%;
     background-color: aqua;
     flex: 4;
     background: #141332;
     border-radius: 20px;
+    padding: 2vw;
 }
 
 #navbar-title-container {
     display: flex;
+    margin-top: 2vh;
 }
 
 #navbar-title {
@@ -107,12 +109,11 @@ html, body {
 }
 
 #dashboard-welcome h2 {
-    margin-left: 40px;
     margin-bottom: 0;
+    margin-top: 0;
 }
 
 #dashboard-welcome-subtitle {
-    margin-left: 40px;
     color: #A6A6A6;
     font-size: 15px;
     margin-top: 0;
@@ -121,15 +122,21 @@ html, body {
 #dashboard-welcome-icon {
     width: 30px;
     height: 30px;
-    margin-top: 20px;
     margin-left: 10px;
+}
+
+.main-dashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns with equal width */
+    grid-template-rows: auto auto; /* 2 rows with auto height */
+    gap: 20px; /* Adjust the gap as needed */
 }
 
 .dashboard-total {
     margin: 30px 0px 20px 0px;
     border-radius: 15px;
     background: #1D1D41;
-    width: 20%;
+    padding: 10px;
     height: 70px;
     display: flex;
     align-items: center;
@@ -142,7 +149,6 @@ html, body {
 .dashboard-total img {
     width: 40px;
     height: 40px;
-    margin-left: 30px;
 }
 
 .dashboard-total-title {
@@ -155,60 +161,55 @@ html, body {
     margin-top: 0px;
 }
 
-.dashboard-total-box {
-    width: 80%;
-    display: flex;
-    justify-content: space-around;
-}
-
-#dashboard-total-first {
-    margin-left: 25px;
-}
-
 .circle {
     stroke: #4cc790;
     fill: none;
     stroke-width: 2.8;
     stroke-linecap: round;
     animation: progress 1s ease-out forwards;
-  }
+}
   
-  .percentage-text {
+.percentage-text {
     font-size: 0.3em;
     font-family: 'DM Sans', sans-serif;
     fill: #4cc790;
-  }
+}
   
-  @keyframes progress {
+@keyframes progress {
     0% {
       stroke-dasharray: 0 100;
     }
-  }
+}
 
-  #dashboard-percentage-chart {
+#dashboard-percentage-chart {
     background: #1D1D41;
     border-radius: 15px;
-    width: 230px;
-    height: 270px;
-    margin-left: 35px;
     display: flex;
     flex-direction: column;
-  }
+}
 
-  #dashboard-percentage-chart p {
+#dashboard-percentage-chart p {
     font-size: 20px;
     text-align: center;
     margin-bottom: 5px;
     margin-top: 15px;
-  }
+}
 
-  #dashboard-percentage-chart svg {
+#dashboard-percentage-chart svg {
     margin: 10px;
-  }
+}
 
-  #transaction-box {
+#transaction-box {
     background: #1D1D41;
     border-radius: 15px;
-    margin-left: 35px;
-    width: 25%;
-  }
+    padding: 2vw;
+    grid-column: span 2;
+ }
+
+ .transaction {
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+ }
+
+ 
