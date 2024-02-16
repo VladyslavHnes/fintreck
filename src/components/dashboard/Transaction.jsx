@@ -2,6 +2,10 @@ import React from "react";
 
 export default function Transaction(props) {
     return(
-        <li className="transaction">{props.value}</li>
+        <tr className="tr-table-element">
+            <td>{props.finInstrument}</td>
+            <td>{props.value}</td>
+            <td>{props.date}</td>
+        </tr>
     )
 }

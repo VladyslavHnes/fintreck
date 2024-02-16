@@ -1,50 +1,34 @@
 import React, { useState } from "react";
 import Transactions from "./Transactions";
-import data from "./data.json"
+import SumBlock from "./SumBlock";
+import jsonData from "./data.json"
 
 export default function DashboardBody() {
-    let [totalSum, setTotalSum] = useState(data.totalSum);
-    let [transactions, setTransactions] = useState(data.transactions);
-    let payedSum = transactions.reduce((partialSum, num) => partialSum + num, 0);
-    let leftSum = totalSum - payedSum;
-    let percentage = (payedSum / totalSum) * 100;
+    let [data, setData] = useState(jsonData);
+    let payedSum = data.transactions.map(tr => tr.value).reduce((partialSum, num) => partialSum + num, 0);
+    let leftSum = data.totalSum - payedSum;
+    let percentage = (payedSum / data.totalSum) * 100;
     percentage = percentage.toFixed(2)
+
 
     return (
         <div className="main-dashboard">
+            <SumBlock text="Total sum" imgPath="./icons/total-sum.png" sum={data.totalSum} />
+            <SumBlock text="Payed sum" imgPath="./icons/payed.png" sum={payedSum} />
+            <SumBlock text="Sum left total" imgPath="./icons/sum-left.png" sum={leftSum} />
+            <SumBlock text="Sum left per month" imgPath="./icons/total-sum.png" sum={leftSum / data.monthNumber} />
             <div className="dashboard-total">
-                <img src="./icons/total-sum.png" />
+                <img src="./icons/month.png" />
                 <div className="dashboard-total-text">
-                    <p className="dashboard-total-title">Total sum</p>
-                    <p className="dashboard-total-sum">₴{totalSum.toLocaleString().replace(/,/g, ' ')}</p>
-                </div>
-            </div>
-            <div className="dashboard-total">
-                <img src="./icons/payed.png" />
-                <div className="dashboard-total-text">
-                    <p className="dashboard-total-title">Payed sum</p>
-                    <p className="dashboard-total-sum">₴{payedSum.toLocaleString().replace(/,/g, ' ')}</p>
-                </div>
-            </div>
-            <div className="dashboard-total">
-                <img src="./icons/sum-left.png" />
-                <div className="dashboard-total-text">
-                    <p className="dashboard-total-title">Sum left total</p>
-                    <p className="dashboard-total-sum">₴{leftSum.toLocaleString().replace(/,/g, ' ')}</p>
-                </div>
-            </div>
-            <div className="dashboard-total">
-                <img src="./icons/sum-per-month.png" />
-                <div className="dashboard-total-text">
-                    <p className="dashboard-total-title">Sum left per month</p>
-                    <p className="dashboard-total-sum">₴200</p>
+                    <p className="dashboard-total-title">Number of months</p>
+                    <p className="dashboard-total-sum">{data.monthNumber}</p>
                 </div>
             </div>
             <div id="dashboard-percentage-chart">
-                <p>Progress</p>
+                <p style={{fontSize: "1.5rem"}}>Progress</p>
                 <svg viewBox="0 0 36 36" className="circular-chart"><path className="circle" id="chartPath" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" style={{strokeDasharray: `${percentage}, 100`}}></path><text x="50%" y="50%" textAnchor="middle" dy=".3em" className="percentage-text" id="percentageText">{percentage}%</text></svg>
             </div>
-            <Transactions transactions={transactions}/>
+            <Transactions transactions={data.transactions}/>
         </div>
     )
 }
