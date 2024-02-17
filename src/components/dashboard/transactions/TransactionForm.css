@@ -1,0 +1,27 @@
+.tr-form {
+    margin: 5vw;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.3rem;
+}
+
+.tr-form-input {
+    padding: 3vh;
+    display: flex;
+}
+
+.tr-form-input input {
+    width: 12vw;
+    margin-left: auto;
+    border-radius: 5px;
+}
+
+.tr-form button {
+    padding: 10px;
+    align-self: center;
+    width: 7vw;
+    font-size: 1rem;
+    font-family: 'DM Sans', sans-serif;
+    border-radius: 10px;
+}
+

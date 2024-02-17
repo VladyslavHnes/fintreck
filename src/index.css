@@ -217,7 +217,7 @@ html, body {
  }
 
  .transaction-table {
-    max-height: 35vh;
+    max-height: 10vh;
     overflow: hidden; 
     overflow-y: scroll;
  }
@@ -237,6 +237,26 @@ html, body {
   thead tr {
     font-size: 1.3rem;
     color: #AEABD8;
+  }
+
+
+  .modal {
+    position: absolute;
+    top: 25vh;
+    left: 25vw;
+    right: 25vw;
+    bottom: 25vh;
+    backdrop-filter: blur(16px);
+    border-radius: 15px;
+    border: 1px solid black;
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
 
  

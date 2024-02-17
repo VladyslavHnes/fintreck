@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function SumBlock(props) {
-    console.log(props.sum.toLocaleString().replace(/,/g, ' '))
+    console.log("Rendering sum block")
     return (
         <div className="dashboard-total">
             <img src={props.imgPath} />
