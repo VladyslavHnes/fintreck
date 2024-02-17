@@ -21,17 +21,16 @@ export default function DashboardBody() {
     }
 
     useEffect(() => {
-        console.log("Recalculating")
         let newSums = getSums();
         setSums(newSums);
     }, [data])
 
     function addTransaction(transaction) {
-        console.log("Updating data")
         setData(prevData => {
             return {
                 ...prevData,
-                transactions: [...prevData.transactions, transaction]
+                transactions: [...prevData.transactions, transaction],
+                monthNumber: prevData.monthNumber - 1
             };
         })
     }

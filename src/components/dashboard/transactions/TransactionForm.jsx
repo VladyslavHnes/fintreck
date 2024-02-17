@@ -45,6 +45,9 @@ export default function TransactionForm(props) {
             year: 'numeric',
             }).replace(/\//g, '-');
             values.date = formattedDate;
+
+            const sanitizedValue = values.value.replace(/[^0-9]/g, "");
+            values.value = Number(sanitizedValue);
             props.addTransaction(values)
             // alert(JSON.stringify(values, null, 2));
         },
@@ -58,6 +61,7 @@ export default function TransactionForm(props) {
                     id="finInstrument"
                     name="finInstrument"
                     type="text"
+                    placeholder="Financial instrument"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.finInstrument}
@@ -70,7 +74,8 @@ export default function TransactionForm(props) {
                 <input
                     id="value"
                     name="value"
-                    type="number"
+                    type="text"
+                    placeholder="Value"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.value}

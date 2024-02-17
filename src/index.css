@@ -88,7 +88,7 @@ html, body {
     padding: 10px;
     margin-left: 20px;
     margin-top: auto;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
     width: 150px;
     margin-right: auto;
 }
@@ -262,7 +262,7 @@ html, body {
   thead, tbody { display: block; }
 
   tbody {
-      max-height: 35vh;
+      max-height: 36vh;
       overflow-y: auto;    /* Trigger vertical scroll    */
       overflow-x: hidden;  /* Hide the horizontal scroll */
   }
