@@ -22,7 +22,7 @@ export default function Transactions(props) {
     return(
         <div id="transaction-box">
             <div style={{"display": "flex"}}>
-                <h2 style={{margin:0, alignSelf:"center"}}>Transactions</h2>
+                <h2 style={{"marginLeft": "auto"}}>Transactions</h2>
                 <button onClick={handleOpenModal} style={
                     {
                         backgroundColor: "#1D1D41",

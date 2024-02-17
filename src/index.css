@@ -205,8 +205,9 @@ html, body {
     background: #1D1D41;
     border-radius: 15px;
     padding: 5vh;
+    padding-top: 2vh;
     grid-column: span 3;
-    height: 54vh;
+    height: 57vh;
  }
 
  .transaction {
@@ -239,7 +240,6 @@ html, body {
     color: #AEABD8;
   }
 
-
   .modal {
     position: absolute;
     top: 25vh;
@@ -259,4 +259,20 @@ html, body {
     bottom: 0;
   }
 
+  thead, tbody { display: block; }
+
+  tbody {
+      max-height: 35vh;
+      overflow-y: auto;    /* Trigger vertical scroll    */
+      overflow-x: hidden;  /* Hide the horizontal scroll */
+  }
+
+  th {
+    padding-left: 3vw;
+    padding-right: 3vw;
+  }
  
+  td {
+    padding-left: 3vw;
+    padding-right: 3vw;
+  }
