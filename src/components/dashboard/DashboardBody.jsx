@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react";
 import Transactions from "./transactions/Transactions";
 import SumBlock from "./SumBlock";
-import jsonData from "./data.json"
+import jsonData from "./dataTest.json"
 
 export default function DashboardBody() {
     let [data, setData] = useState(jsonData);
@@ -40,7 +40,7 @@ export default function DashboardBody() {
             <SumBlock text="Total sum" imgPath="./icons/total-sum.png" sum={data.totalSum} />
             <SumBlock text="Payed sum" imgPath="./icons/payed.png" sum={sums.payedSum} />
             <SumBlock text="Sum left total" imgPath="./icons/sum-left.png" sum={sums.leftSum} />
-            <SumBlock text="Sum left per month" imgPath="./icons/total-sum.png" sum={sums.leftSum / data.monthNumber} />
+            <SumBlock text="Sum left per month" imgPath="./icons/total-sum.png" sum={Math.trunc(sums.leftSum / data.monthNumber)} />
             <div className="dashboard-total">
                 <img src="./icons/month.png" />
                 <div className="dashboard-total-text">

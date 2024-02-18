@@ -236,7 +236,7 @@ html, body {
   }
 
   thead tr {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: #AEABD8;
   }
 
@@ -273,6 +273,6 @@ html, body {
   }
  
   td {
-    padding-left: 3vw;
+    padding-left: 3.5vw;
     padding-right: 3vw;
   }
